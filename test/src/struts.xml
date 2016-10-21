@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="bookfind" extends="struts-default">
+		<action name="BookAdd" method="ChaRu" class="bookfind.BookAdd">
+			<result name="finish" type="redirectAction">BookSee</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookShow" method="gainBookList" class="bookfind.BookShow">
+			<result name="finish">AuthorBook.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookSee" method="gainBookList" class="bookfind.BookSee">
+			<result name="finish">BookLook.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookDetail" method="showDetail" class="bookfind.BookDetail">
+			<result name="finish">Detail.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookDelete" method="Delete" class="bookfind.BookDelete">
+			<result name="finish" type="redirectAction">BookSee</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookDetail2" method="showDetail" class="bookfind.BookDetail2">
+			<result name="finish">Modify.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="BookModify" method="Modify" class="bookfind.BookModify">
+			<result name="finish" type="redirectAction">BookSee</result>
+			<result name="unfinish">AuthorAdd1.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="Judge" method="JudgeMent" class="bookfind.Judge">
+			<result name="finish">Home.jsp</result>
+			<result name="unfinish">AuthorAdd.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="AuthorAdd" method="ChaRu" class="bookfind.AuthorAdd">
+			<result name="finish">BookAdd.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="AuthorAdd1" method="ChaRu" class="bookfind.AuthorAdd1">
+			<result name="finish" type="redirectAction">BookSee</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+	</package>
+
+</struts>    
